@@ -1,6 +1,7 @@
 require_relative 'car'
 
 class UsedCar < Car
+include CarModule
 
   DAMAGES = {
   scratched_paint: 500,
@@ -10,8 +11,6 @@ class UsedCar < Car
   }
 
   MILEAGE_DEPRECATION = 0.0001
-
-  attr_reader :mileage
 
   def initialize(make, model, year, msrp, mileage, damages: 'none')
     super(make, model, year, msrp)
@@ -28,5 +27,4 @@ class UsedCar < Car
 
     (@current_value * multiplier).round(2)
   end
-
 end

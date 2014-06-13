@@ -1,11 +1,9 @@
 require 'date'
 
 class Car
+include CarModule
 
-  ANNUAL_DEPRECATION = 0.95
-  MARKUP = 1.25
-
-  attr_reader :make, :model, :year, :msrp
+  attr_reader :make, :model, :year, :msrp, :price
 
   def initialize(make, model, year, msrp)
     @make = make
@@ -22,7 +20,7 @@ class Car
     initial_price = @msrp
 
     until lifespan == 0
-      initial_price = initial_price * ANNUAL_DEPRECATION
+      initial_price = initial_price * CarModule::ANNUAL_DEPRECATION
       lifespan -= 1
     end
 
@@ -30,7 +28,7 @@ class Car
   end
 
   def price
-    (@current_value * MARKUP).round(2)
+    (@current_value * CarModule::MARKUP).round(2)
   end
 
 end
