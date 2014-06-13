@@ -18,6 +18,8 @@ class UsedCar < Car
 
     @mileage = mileage
     @damages = damages
+    @current_value = mileage_deprecation
+    @price = price
   end
 
   def mileage_deprecation
