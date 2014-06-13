@@ -3,6 +3,7 @@ require 'date'
 class Car
 
   DEPRECATION = 0.95
+  MARKUP = 1.25
 
   attr_reader :make, :model, :year, :msrp
 
@@ -12,6 +13,7 @@ class Car
     @year = year
     @msrp = msrp
     @current_value = current_value
+    @price = price
   end
 
   def current_value
@@ -25,6 +27,10 @@ class Car
     end
 
     initial_price.round(2)
+  end
+
+  def price
+    (@current_value * MARKUP).round(2)
   end
 
 end
