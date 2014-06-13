@@ -7,7 +7,7 @@ class Car
 
   attr_reader :make, :model, :year, :msrp
 
-  def initialize(make, model, year, msrp)
+  def initialize(make, model, year, msrp, mileage: 0)
     @make = make
     @model = model
     @year = year

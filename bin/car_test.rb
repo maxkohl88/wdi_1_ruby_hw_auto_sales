@@ -1,7 +1,7 @@
 require 'pry'
-require_relative '../lib/car.rb'
+require_relative '../lib/used_car.rb'
 
-subaru = Car.new('Subaru', 'Outback', 2009, 25000)
+subaru = UsedCar.new('Subaru', 'Outback', 2009, 25000, mileage: 47000)
 
 binding.pry
 
